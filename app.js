@@ -10,7 +10,7 @@ validateNumber.addEventListener("click", valideazaNumarTelefon);
 
 function valideazaNumarTelefon(){
         var newPhoneNumber = phoneNumber.value;
-        if(newPhoneNumber.match(/[a-z]/i)) {
+        if(newPhoneNumber.match(/[^a-zA-Z ]+/)) {
             rezultat.classList.remove('result-valid');
             rezultat.innerHTML = "Numarul este invalid, ati introdus litere!";
             rezultat.classList.add('result-invalid');
