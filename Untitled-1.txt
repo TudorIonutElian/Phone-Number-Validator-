@@ -1,0 +1,45 @@
+var newPhoneNumber = phoneNumber[i].value;
+        if (newPhoneNumber.match(/[a-z]/i)) {
+            rezultat.classList.remove('result-valid');
+            rezultat.innerHTML = "Numarul este invalid, ati introdus litere!";
+            rezultat.classList.add('result-invalid');
+        }else if(newPhoneNumber.length < 10){
+            rezultat.classList.remove('result-valid');
+            rezultat.innerHTML = "<p>Ati introdus " +  newPhoneNumber.length + " cifre." + "</p><p>Numarul introdus nu are suficiente cifre, aveti nevoie de minim 10!</p>";
+            rezultat.classList.add('result-invalid');
+        }else if(newPhoneNumber.length > 10){
+            rezultat.classList.remove('result-valid');
+            rezultat.innerHTML = "<p>Ati introdus " + newPhoneNumber.length + " cifre"+ " </p><p>Numarul maxim de cifre pentru un numar valid este 10.</p>";
+            rezultat.classList.add('result-invalid');
+        }else{
+            rezultat.classList.remove('result-invalid');
+            var newInput = document.createElement('INPUT');
+            newInput.className = "phoneNumber";
+            boxForNumbers.appendChild(newInput);
+            rezultat.innerHTML = "Numarul introdus este valid! Felicitari";
+            rezultat.classList.add('result-valid');
+        }
+    }
+
+
+
+    function valideazaNumarTelefon(){
+    var phoneNumber     = document.querySelectorAll('.phoneNumber');
+    var numar           = phoneNumber.length;
+    for(var i = 0; i < numar; i++){
+        if (isNaN(phoneNumber[i].value)) {
+            parseInt(phoneNumber[i].value);
+            if(!parseInt(phoneNumber[i].value)){
+                rezultat.classList.remove('result-valid');
+                rezultat.innerHTML = "Numarul "+ phoneNumber[i].value + " este invalid, ati introdus litere!";
+                rezultat.classList.add('result-invalid');
+            }else if(phoneNumber[i].length < 10) {
+                rezultat.innerHTML = "Numarul introdus este valid! Felicitari";
+                rezultat.classList.add('result-valid');
+            }
+        }
+    
+        
+    }
+}
+    
