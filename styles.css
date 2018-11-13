@@ -7,17 +7,11 @@
     0% {
         opacity: .1;
     }
-    25% {
-        opacity: .3;
-    }
-    45% {
-        opacity: .6;
-    }
     75% {
         opacity: .8;
     }
     100% {
-        opacity: 1;
+        opacity: .9;
     }
 }
 body {
@@ -71,7 +65,7 @@ body {
     background-color: #0f7402d7;
     color: #ffffff;
     font-weight: bold;
-    animation: FadeAnimation .5s ease-in;
+    animation: FadeAnimation .9s all;
 }
 .result-invalid {
     display: block;
